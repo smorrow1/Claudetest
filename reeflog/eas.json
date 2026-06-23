@@ -11,9 +11,8 @@
         "simulator": false
       }
     },
-    "testflight": {
-      "distribution": "store",
-      "autoIncrement": true,
+    "preview": {
+      "distribution": "internal",
       "ios": {
         "buildConfiguration": "Release"
       }
@@ -27,10 +26,9 @@
     }
   },
   "submit": {
-    "testflight": {
+    "preview": {
       "ios": {
         "appleId": "soenke.morrow@gmail.com",
-        "ascAppId": "TODO: paste App Store Connect App ID here",
         "appleTeamId": "TODO: paste your Apple Team ID here"
       }
     },
