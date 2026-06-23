@@ -3,6 +3,7 @@
     "name": "ReefLog",
     "slug": "reeflog",
     "version": "1.0.0",
+    "owner": "smorrow1s-team",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
