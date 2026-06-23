@@ -21,6 +21,19 @@
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "TODO: your Apple ID email",
+        "ascAppId": "TODO: App Store Connect App ID",
+        "appleTeamId": "TODO: your Apple Team ID"
+      }
+    },
+    "preview": {
+      "ios": {
+        "appleId": "TODO: your Apple ID email",
+        "ascAppId": "TODO: App Store Connect App ID",
+        "appleTeamId": "TODO: your Apple Team ID"
+      }
+    }
   }
 }
