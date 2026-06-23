@@ -12,8 +12,8 @@
       "backgroundColor": "#0A1628"
     },
     "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.yourname.reeflog",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.smorrow1.reeflog",
       "buildNumber": "1"
     },
     "android": {
@@ -21,7 +21,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0A1628"
       },
-      "package": "com.yourname.reeflog",
+      "package": "com.smorrow1.reeflog",
       "versionCode": 1
     },
     "web": {
