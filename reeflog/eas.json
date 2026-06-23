@@ -11,29 +11,34 @@
         "simulator": false
       }
     },
-    "preview": {
-      "distribution": "internal",
+    "testflight": {
+      "distribution": "store",
+      "autoIncrement": true,
       "ios": {
         "buildConfiguration": "Release"
       }
     },
     "production": {
-      "autoIncrement": true
+      "distribution": "store",
+      "autoIncrement": true,
+      "ios": {
+        "buildConfiguration": "Release"
+      }
     }
   },
   "submit": {
-    "production": {
+    "testflight": {
       "ios": {
-        "appleId": "TODO: your Apple ID email",
-        "ascAppId": "TODO: App Store Connect App ID",
-        "appleTeamId": "TODO: your Apple Team ID"
+        "appleId": "soenke.morrow@gmail.com",
+        "ascAppId": "TODO: paste App Store Connect App ID here",
+        "appleTeamId": "TODO: paste your Apple Team ID here"
       }
     },
-    "preview": {
+    "production": {
       "ios": {
-        "appleId": "TODO: your Apple ID email",
-        "ascAppId": "TODO: App Store Connect App ID",
-        "appleTeamId": "TODO: your Apple Team ID"
+        "appleId": "soenke.morrow@gmail.com",
+        "ascAppId": "TODO: paste App Store Connect App ID here",
+        "appleTeamId": "TODO: paste your Apple Team ID here"
       }
     }
   }
