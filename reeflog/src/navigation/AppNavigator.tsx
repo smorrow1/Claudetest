@@ -26,7 +26,7 @@ function TabIcon({ label, focused }: { label: string; focused: boolean }) {
   return (
     <View style={tabStyles.iconContainer}>
       <Text style={tabStyles.iconEmoji}>{icons[label]}</Text>
-      <Text style={[tabStyles.iconLabel, focused && tabStyles.iconLabelActive]}>
+      <Text style={[tabStyles.iconLabel, focused && tabStyles.iconLabelActive]} numberOfLines={1}>
         {label}
       </Text>
     </View>
@@ -137,6 +137,7 @@ const tabStyles = StyleSheet.create({
     justifyContent: 'center',
     gap: 2,
     paddingTop: 8,
+    width: 70,
   },
   iconEmoji: {
     fontSize: 22,
@@ -145,6 +146,8 @@ const tabStyles = StyleSheet.create({
     fontSize: 10,
     color: Colors.textMuted,
     fontWeight: '500',
+    textAlign: 'center',
+    numberOfLines: 1,
   },
   iconLabelActive: {
     color: Colors.ocean,

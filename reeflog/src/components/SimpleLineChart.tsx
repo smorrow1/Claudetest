@@ -65,7 +65,7 @@ export function SimpleLineChart({ data, target, unit, decimalPlaces, height = CH
 
           return (
             <View
-              key={point.date}
+              key={`${point.date}-${i}`}
               style={[
                 styles.point,
                 {

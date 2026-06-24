@@ -26,19 +26,28 @@ export function DashboardScreen() {
   const navigation = useNavigation<any>();
   const { hasAccess, trialDaysRemaining, isTrialActive } = usePremium();
 
+  const activeTankId = useTankStore((s) => s.activeTankId);
   const tank = useTankStore((s) => s.getActiveTank());
   const getTargets = useTankStore((s) => s.getTargets);
 
-  const getLatestLog = useTestStore((s) => s.getLatestLog);
-  const latestLog = tank ? getLatestLog(tank.id) : null;
+  // Subscribe to logs data directly so dashboard re-renders when a test is saved
+  const latestLog = useTestStore((s) => {
+    if (!activeTankId) return null;
+    return (
+      s.logs
+        .filter((l) => l.tankId === activeTankId)
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0] ?? null
+    );
+  });
 
-  const getChemicalsForTank = useDosingStore((s) => s.getChemicalsForTank);
+  const chemicals = useDosingStore((s) =>
+    activeTankId ? s.chemicals.filter((c) => c.tankId === activeTankId) : [],
+  );
   const getTodayLog = useDosingStore((s) => s.getTodayLog);
   const isDueToday = useDosingStore((s) => s.isDueToday);
   const getLastDosed = useDosingStore((s) => s.getLastDosed);
   const toggleDoseComplete = useDosingStore((s) => s.toggleDoseComplete);
 
-  const chemicals = tank ? getChemicalsForTank(tank.id) : [];
   const targets = tank ? getTargets(tank.id) : [];
   const dueChemicals = chemicals.filter((c) => isDueToday(c));
 
